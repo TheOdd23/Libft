@@ -9,7 +9,7 @@ void    ft_bzero(void *str, size_t n)
         return ;
     while (i < n)
     {
-        ((char *))str[i] = 0;
+        ((char *)str)[i] = 0;
         i++;
     }
 }
