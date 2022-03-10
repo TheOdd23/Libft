@@ -42,7 +42,7 @@ void    *ft_memchr(const void *str, int c, size_t n);
 /*Copie n bytes du bloc mémoire s1 dans le bloc s2*/
 void    *ft_memcpy(void *s1, const void *s2, size_t n);
 /*Copie n bytes du bloc mémoire s1 dans le bloc 2 et le bloc deux conserve les bytes excédant si s1 est plus petit que n*/
-void    *ft_memmove(void *s1, const void s2, size_t n);
+void    *ft_memmove(void *s1, const void *s2, size_t n);
 /*Copie le charactere c dans les n charactères de la string passée en paramètre*/
 void    *ft_memset(void *str, int c, size_t n);
 /*Alloue la mémoire nécessaire en mettant des 0 à tous les bytes*/ 
