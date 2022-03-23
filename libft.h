@@ -62,7 +62,7 @@ void    ft_lstadd_back(t_list **lst, t_list *new);
 /*Libère la mémoire du contenu de la node passée en paramètre*/
 void    ft_lstdelone(t_list *lst, void (*del)(void *));
 /*Applique la fonction 'f' sur le contenu de chaque node de la liste passée en paramètre*/
-void    ft_lstiter(t_list **lst, void (*f) (void *));
+void    ft_lstiter(t_list *lst, void (*f) (void *));
 /*Supprime et libère la node passée en paramètre et toutes les suivantes*/
 void    ft_lstclear(t_list **lst, void (*del)(void *));
 /*Retourne la string partir de la première occurence du char c dans la string passée en paramètre*/
