@@ -6,7 +6,8 @@ int ft_lstsize(t_list *lst)
 
     i = 1;
     if (lst == NULL)
-        return (NULL);
+        return (0);
+    lst = lst->next;
     while (lst != NULL)
     {
         lst = lst->next;
