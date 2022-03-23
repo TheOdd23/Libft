@@ -16,17 +16,13 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     if (nouv == NULL)
         return (NULL);
     if (start >= slen)
-        return(NULL);
+        return(nouv);
     while (s[i] && j < len)
     {
         nouv[j] = s[i];
         i++;
         j++;
     }
-    while(nouv[j])
-    {
-        nouv = '\0';
-        j++;
-    }
+    nouv[j] = '\0';
     return (nouv);
 }
