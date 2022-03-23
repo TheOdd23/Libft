@@ -1,9 +1,12 @@
 #include "libft.h"
 
-char *strchr(const char *str, int c)
+char *ft_strchr(const char *str, int c)
 {
     int i;
 
+    i = ft_strlen(str);
+    if (c == '\0')
+            return ((char *)&str[i]);
     i = 0;
     while (str[i])
     {
@@ -11,5 +14,5 @@ char *strchr(const char *str, int c)
             return ((char *)&str[i]);
         i++;
     }
-    return (0);
+    return (NULL);
 }
