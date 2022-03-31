@@ -1,6 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anhebert <anhebert@42quebec.com>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 11:58:00 by anhebert          #+#    #+#             */
+/*   Updated: 2022/03/30 14:01:40 by anhebert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*Alloue de la mémoire pour faire une copie de la string passée en
+ * paramètre et la renvoie*/
+
 #include "libft.h"
 
-char *ft_strdup(const char *str)
+char	*ft_strdup(const char *str)
 {
 	int		i;	
 	char	*dest;

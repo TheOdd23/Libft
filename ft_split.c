@@ -1,94 +1,95 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anhebert <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 13:09:40 by anhebert          #+#    #+#             */
+/*   Updated: 2022/03/31 13:26:44 by anhebert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*Retourne un array de strings, dont chaque string
+ * sera composée des charactères délimités par le
+ * charactère passé en paramètre*/
+
 #include "libft.h"
 
-int char_is_sep(const char ch, char c)
+int	ft_wordlen(char const *str, int counter, char c)
 {
-    if (ch == c)
-        return (0);
-    else
-        return (1);
+	int	i;
+
+	i = 0;
+	while (counter >= 0 && str[counter] != c)
+	{
+		counter--;
+		i++;
+	}
+	return (i);
 }
 
-int ft_wordlen(char const *str, int counter, char c)
+char	*ft_words(char const *str, char c, int counter)
 {
-    int i;
+	int		i;
+	int		wordlen;
+	int		j;
+	char	*word;
 
-    i = 0;
-    while (counter >= 0 && char_is_sep(str[counter], c) != 0)
-    {
-        counter--;
-        i++;
-    }
-    return (i);
+	i = 0;
+	wordlen = ft_wordlen(str, counter, c);
+	j = (counter - wordlen) + 1;
+	word = ft_calloc(wordlen + 1, sizeof(char));
+	while (j <= counter)
+	{
+		word[i] = str[j];
+		i++;
+		j++;
+	}
+	return (word);
 }
 
-char    *ft_words(char const *str, char c, int counter)
+int	ft_nb_words(char const *str, char c)
 {
-    int     i;
-    int     wordlen;
-    int     j;
-    char    *word;
+	int	i;
+	int	count;
 
-    i = 0;
-    wordlen = ft_wordlen(str, counter, c);
-    j = (counter - wordlen) + 1;
-    word = malloc((sizeof(char) * wordlen) + 1);
-    while (j <= counter)
-    {
-        word[i] = str[j];
-        i++;
-        j++;
-    }
-    word[i] = '\0';
-    return (word);
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if ((str[i] != c && str[i + 1] == c)
+			|| (str[i] != c && str[i + 1] != '\0'))
+			count++;
+		i++;
+	}
+	return (count);
 }
 
-int ft_nb_words(char const *str, char c)
+char	**ft_split(char const *s, char c)
 {
-    int i;
-    int count;
+	int		i;
+	int		j;
+	char	**nouv;
 
-    i = 0;
-    count = 1;
-    while (str[i])
-    {
-        if (str[i] == c)
-            count++;
-        i++;
-    }
-    return (count);
-}
-
-char **ft_split(char const *s, char c)
-{
-    int     i;
-    int     j;
-    char    **nouv;
-
-    i = 0;
-    j = 0;
-    nouv = malloc((sizeof(char) * ft_nb_words(s, c)) + 1);
-    if (nouv == NULL)
-        return (NULL);
-    while (s[i])
-    {
-        if (char_is_sep(s[i], c) != 0)
-        {
-            if (char_is_sep(s[i + 1], c) == 0 || s[i + 1] == '\0')
-            {
-                nouv[j] = ft_words(s, c, i);
-                j++;
-            }
-            i++;
-        }
-        if (char_is_sep(s[i], c) == 0)
-            i++;
-    }
-    nouv[j] = '\0';
-    j = 0;
-    while (nouv[j])
-    {
-        printf("%s\n", nouv[j]);
-        j++;
-    }
-    return (nouv);
+	i = 0;
+	j = 0;
+	if (!s)
+		return (NULL);
+	nouv = ft_calloc(ft_nb_words(s, c) + 1, sizeof(char *));
+	if (nouv == NULL)
+		return (NULL);
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			if (s[i + 1] == c || s[i + 1] == '\0')
+			{
+				nouv[j] = ft_words(s, c, i);
+				j++;
+			}
+		}
+		i++;
+	}
+	return (nouv);
 }
