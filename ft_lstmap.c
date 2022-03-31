@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anhebert <anhebert@42quebec.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/28 11:48:44 by anhebert          #+#    #+#             */
-/*   Updated: 2022/03/30 13:58:06 by anhebert         ###   ########.fr       */
+/*   Created: 2022/03/30 12:04:18 by anhebert          #+#    #+#             */
+/*   Updated: 2022/03/30 13:56:45 by anhebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Compare n nombre d'octets de deux
- * blocs mémoires et renvoie la différence*/
+/*Crée une nouvelle liste résultant de l'application de la fonction 'f' sur
+ * le contenu de chaque node de la liste passée en paramètre*/
 
 #include "libft.h"
-
-int	ft_memcmp(const void *str1, const void *str2, size_t n)
+/*
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void*))
 {
-	size_t				i;
-	const unsigned char	*s1;
-	const unsigned char	*s2;
-
-	s1 = (const unsigned char *)str1;
-	s2 = (const unsigned char *)str2;
-	i = 0;
-	while (i < n)
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (0);
-}
+}*/
