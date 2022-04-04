@@ -12,21 +12,23 @@ SRCS	=	ft_atoi.c ft_bzero.c  ft_calloc.c ft_isalnum.c ft_isalpha.c \
 BONSRCS	=	ft_lstnew.c	ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 					ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstclear.c
 OBJS	=	${SRCS:.c=.o}
-BONOBJ	=	${BONSRCS:.c=.o}
+BONOBJS	=	${BONSRCS:.c=.o}
 RM		=	rm -f
 
-$(NAME)	:	${OBJS}
+.c.o	:
+	${CC} ${FLAGS} -c $<
+
+$(NAME)	:	 ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
 all		:	$(NAME)
-
-bonus	:	${BONOBJ} ${OBJS}
-	ar rcs ${NAME} ${OBJS} ${BONOBJ}
+bonus	:	${OBJS} ${BONOBJS}
+	ar rcs ${NAME} ${OBJS} ${BONOBJS}
 
 clean	:	
 	${RM} ${OBJS} 
-cleanbonus	:
-	${RM} ${BONOBJ}
+cleanbonus	:	clean
+	${RM} ${BONOBJS}
 
 fclean	:	clean cleanbonus
 	$(RM) $(NAME)

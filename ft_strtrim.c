@@ -6,7 +6,7 @@
 /*   By: anhebert <anhebert@42quebec.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 12:13:28 by anhebert          #+#    #+#             */
-/*   Updated: 2022/03/30 14:04:01 by anhebert         ###   ########.fr       */
+/*   Updated: 2022/04/04 13:02:19 by anhebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "libft.h"
 
-int	ft_ischarset_up(char const *s1, char const *set)
+static int	ft_ischarset_up(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
@@ -38,7 +38,7 @@ int	ft_ischarset_up(char const *s1, char const *set)
 	return (j);
 }
 
-int	ft_ischarset_down(char const *s1, char const *set, int start)
+static int	ft_ischarset_down(char const *s1, char const *set, int start)
 {
 	int	i;
 

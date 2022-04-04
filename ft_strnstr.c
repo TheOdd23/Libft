@@ -6,7 +6,7 @@
 /*   By: anhebert <anhebert@42quebec.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 12:10:20 by anhebert          #+#    #+#             */
-/*   Updated: 2022/03/30 14:03:53 by anhebert         ###   ########.fr       */
+/*   Updated: 2022/03/31 16:12:06 by anhebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
 	size_t	i;
 	size_t	j;
-	size_t	tf_len;
 
 	i = 0;
-	tf_len = ft_strlen(to_find);
-	if (to_find[0] == '\0' || to_find == NULL)
+	if (to_find[0] == '\0')
 		return ((char *)str);
 	while (str[i] && i < n)
 	{

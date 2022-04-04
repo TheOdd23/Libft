@@ -6,7 +6,7 @@
 /*   By: anhebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:09:40 by anhebert          #+#    #+#             */
-/*   Updated: 2022/03/31 13:26:44 by anhebert         ###   ########.fr       */
+/*   Updated: 2022/04/04 09:10:19 by anhebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "libft.h"
 
-int	ft_wordlen(char const *str, int counter, char c)
+static int	ft_wordlen(char const *str, int counter, char c)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ int	ft_wordlen(char const *str, int counter, char c)
 	return (i);
 }
 
-char	*ft_words(char const *str, char c, int counter)
+static char	*ft_words(char const *str, char c, int counter)
 {
 	int		i;
 	int		wordlen;
@@ -49,7 +49,7 @@ char	*ft_words(char const *str, char c, int counter)
 	return (word);
 }
 
-int	ft_nb_words(char const *str, char c)
+static int	ft_nb_words(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -59,7 +59,7 @@ int	ft_nb_words(char const *str, char c)
 	while (str[i])
 	{
 		if ((str[i] != c && str[i + 1] == c)
-			|| (str[i] != c && str[i + 1] != '\0'))
+			|| (str[i] != c && str[i + 1] == '\0'))
 			count++;
 		i++;
 	}

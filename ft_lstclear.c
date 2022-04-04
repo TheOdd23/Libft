@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anhebert <anhebert@42quebec.com>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/04 12:43:48 by anhebert          #+#    #+#             */
+/*   Updated: 2022/04/04 13:17:03 by anhebert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /*Supprime et libère la node passée en paramètre et toutes les suivantes*/
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*list;
 
-	if (lst)
+	if (lst != NULL)
 	{
 		while (*lst)
 		{

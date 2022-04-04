@@ -6,7 +6,7 @@
 /*   By: anhebert <anhebert@42quebec.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 12:02:49 by anhebert          #+#    #+#             */
-/*   Updated: 2022/03/31 13:41:12 by anhebert         ###   ########.fr       */
+/*   Updated: 2022/03/31 16:33:18 by anhebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	destlen = ft_strlen(dest);
 	srclen = ft_strlen(src);
 	j = destlen;
-	if (size <= 0)
+	if (size == 0)
 		return (srclen);
 	if (size < destlen)
 		return (size + srclen);
