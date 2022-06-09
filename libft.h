@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <ctype.h> 
 # include <string.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -203,5 +204,21 @@ t_list	*ft_lstlast(t_list *lst);
 /*Crée une nouvelle liste résultant de l'application de la fonction 'f' sur
  * le contenu de chaque node de la liste passée en paramètre*/
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void*));
+
+/*************************************************/
+/********** "FONCTIONS UTILES À PRINTF" **********/
+/*************************************************/
+
+int		ft_check_var(va_list ap, const char var);
+int		ft_printf(const char *str, ...);
+int		ft_printnbr(int nbr);
+int		ft_printunbr(unsigned int nbr);
+int		ft_printchar(char c);
+int		ft_printstr(char *str);
+int		ft_hexalen(unsigned long nb);
+int		ft_printhex(unsigned int nbr, const char var);
+int		ft_printptr(void *ptr);
+void	ft_printhexptr(unsigned long nb, int *len, char *base);
+char	*ft_itoa_pf(int n);
 
 #endif
