@@ -131,7 +131,7 @@ void	ft_lstiter(t_list *lst, void (*f) (void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 
 /***************************************/
-/********** "RETOURNE CHAR" * **********/
+/********** "RETOURNE CHAR *" **********/
 /***************************************/
 
 /*Retourne la string partir de la première occurence du char c dans la string
@@ -218,7 +218,7 @@ int		ft_printstr(char *str);
 int		ft_hexalen(unsigned long nb);
 int		ft_printhex(unsigned int nbr, const char var);
 int		ft_printptr(void *ptr);
-void	ft_printhexptr(unsigned long nb, int *len, char *base);
-char	*ft_itoa_pf(int n);
+void		ft_printhexptr(unsigned long nb, int *len, char *base);
+char		*ft_itoa_pf(int n);
 
 #endif
