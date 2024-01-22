@@ -1,4 +1,4 @@
-# libft
+# Libft
 
 First project of 42's common core. The goal was to built our own function library in C and learning about Makefiles at the same time.
 
